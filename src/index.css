@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&family=Quicksand:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base{
+
+  html {
+    font-family: 'Syne', sans-serif;
+  }
+}
+@layer components{
+  .PrimaryOutlineBtn{
+    @apply px-8 flex justify-center items-center h-14 bg-white border border-[#6e57ff] text-[#6e57ff] rounded-full mt-8
+  }
+  .navItem {
+    @apply text-[16px] duration-300 px-4 py-4 hidden lg:inline-block opacity-60 hover:opacity-100 font-[500] focus:right-2 ;
+  };
+  .dropDown{
+    @apply text-[16px] duration-300 px-4 py-3 hidden lg:inline-block bg-white font-[500] rounded-2xl hover:text-[#6e57ff] hover:border-[#6e57ff] hover:underline mb-1 focus:right-2 ;
+
+  }
+  .navIcon{
+    @apply w-12 h-12 flex items-center justify-center relative
+  };
+  .primaryBtn{
+    @apply px-8 flex justify-center items-center h-14 bg-[#6e57ff] text-white rounded-full mt-8;
+  };
+  .primaryBtnWidthFull{
+    @apply px-8 flex w-full justify-center items-center h-14 bg-[#6e57ff] text-white rounded-full mt-8;
+  }
+}
+
+.slick-list{
+  overflow: visible;
+}
+.slick-slide{
+
+
+}
+.slick-slider{
+  padding-top: 60px;
+}
+
+.active{
+  font-weight: 600;
+  opacity: 100 !important;
+  color: #e4d69c;
+}
