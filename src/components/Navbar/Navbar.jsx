@@ -22,7 +22,7 @@ const Navbar = () => {
   
 
   return (
-      <div className="container fixed z-50 top-0 opacity-100 duration-500 bg-[linear-gradient(360deg,#1b2963,#152154)]">
+      <div className="container  z-50  opacity-100 duration-500 bg-[linear-gradient(360deg,#1b2963,#152154)]">
            <nav className='flex z-50 items-center border-b border-[#bfc5e622] relative py-2 '>
       <div className="py-5 w-24">
         <NavLink to='/'><a href="#">
@@ -33,13 +33,13 @@ const Navbar = () => {
           <Link className='relative navItem cursor-pointer' onClick={click}>
           <a href="#" ><span className='pr-2'>Services</span><IoIosArrowDown className={drop?"inline-block text-[20px] duration-500 -rotate-180 ":"inline-block text-[20px] duration-500 "} />
             </a>
-           {drop&& <div className=' absolute py-1 bg-white rounded-2xl text-black origin-top-left mt-5 flex flex-col w-44 duration-300'>
+           {drop? <div className=' before:h-0 after:h-auto absolute py-1 bg-white rounded-2xl text-black origin-top-left mt-5 flex flex-col w-44 duration-1000 '>
             <Link to="/services/grooming"  className="dropDown">Grooming Service</Link>
             <Link to="/services/pethostel" className='dropDown'>Pet Hostel</Link>
             <Link to="/services/surgicalservice" className='dropDown'>Surgical Service</Link>
             <Link to="/services/dentalcare" className='dropDown'>Dental Care</Link>
 
-            </div>}
+            </div>:null}
          </Link>
         <NavLink to='/about'className=' navItem' >About</NavLink>
         <NavLink to='/team'className=' navItem' >Team</NavLink>

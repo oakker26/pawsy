@@ -1,10 +1,12 @@
 import React from 'react'
-
-const CartItem = ({key,img,title,price,link}) => {
+import { decreaseItem, increaseItem, removeItem } from '../../../feature/cart/cartSlice'
+import { useDispatch } from 'react-redux'
+const CartItem = ({ id, img, title, price, link,amount }) => {
+  const dispatch = useDispatch();
   return (
       <div>
-          <section id={key} className='p-5'>
-           <div className='flex mb-10 flex-row items-center justify-between '>
+          <section className='p-5'>
+           <div className='flex mb-2 flex-row items-center justify-between '>
           <div className=''>
               <div className='p-3 bg-gray-100 rounded-2xl flex items-center justify-center'>
                   <img className=' w-14 ' src={img} alt="" />
@@ -12,10 +14,21 @@ const CartItem = ({key,img,title,price,link}) => {
           </div>
           <div className='text-start'>
                       <h5 className='font-semibold'>{ title}</h5>
-                      <h5 className=' font-semibold'>{price}</h5>
-              <button className='text-[#6e57ff]'> Remove</button>
-              </div>
-              <input type="number" className='  border w-16 pl-4 pr-2 h-10 rounded-2xl bg-gray-100 ' />
+                      <h5 className=' font-semibold'>${price}USD</h5>
+            <button className='text-[#6e57ff]' onClick={() => {
+              dispatch(removeItem(id))
+              }}> Remove</button>
+          </div>
+          <div className=' flex-col items-center justify-center'>
+            <button onClick={() => {
+              dispatch(increaseItem({ id }))
+          }} className='text-3xl font-bold'>+</button>
+            <p className=' font-bold font-[montserrat]'>{amount}</p>
+            <button className='text-3xl font-bold' onClick={() => {
+              amount === 1 && dispatch(removeItem(id));
+              dispatch(decreaseItem(({id})))
+          }}>-</button>
+          </div>
           <div>
               
           </div>

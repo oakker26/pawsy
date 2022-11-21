@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import { motion } from 'framer-motion'
 const Cards = () => {
     let data = [{
         id: 1,
@@ -30,15 +30,25 @@ const Cards = () => {
             textdes: "Veterinary Technician",
             link:"/team/valeriebell"
         },]
-    return (<div className='grid lg:grid-cols-4 md:grid-cols-2 gap-y-6 shadow-sm gap-x-8 mt-20'>
+        const imageAnimation={
+            hide:{x:-100,
+            opacity:0},
+            show:{
+                x:0,
+                opacity:1,
+                transition:{duration:0.3}
+            }
+        }
+    return (<motion.div  initial={"hide"} whileInView={"show"} viewport={{once:false}} onViewportLeave={{}}  transition={{staggerChildren:0.2}}   className='grid lg:grid-cols-4 md:grid-cols-2 gap-y-6 shadow-sm gap-x-8 mt-20'>
           {
-        data.map((e) => <Link to={e.link} id={e.id} className=' cursor-pointer p-6 border bg-white rounded-t-2xl rounded-bl-2xl shadow-md hover:border-black duration-500 hover:-translate-y-4 '>
+            data.map((e) => <Link to={e.link}>
+            <motion.div variants={imageAnimation} id={e.id}  className=' cursor-pointer p-6 border bg-white rounded-t-2xl rounded-bl-2xl shadow-md hover:border-black duration-500 hover:-translate-y-4 '>
             <div className='w-full' ><img className='rounded-t-2xl w-full rounded-bl-2xl' src={e.img} alt="" /></div>
             <div className='mt-6 mb-2'><h5 className='text-xl font-bold'>{e.name}</h5></div>
             <div><p className='opacity-60 font-normal'>{e.textdes }</p></div>
-        </Link>)
+        </motion.div></Link>)
     } 
-    </div>
+    </motion.div>
   )
 }
 

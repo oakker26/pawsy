@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Cards from '../AboutPageSection/AboutTeam/Cards'
+import { motion } from 'framer-motion'
 const TeamPageTrusted = () => {
   let data = [{
     id: 5,
@@ -30,6 +31,15 @@ const TeamPageTrusted = () => {
       textdes: "Veterinary Technician",
         link:"/team/mistyreeves"
     },]
+    const imageAnimation={
+      hide:{x:100,
+      opacity:0},
+      show:{
+          x:0,
+          opacity:1,
+          transition:{duration:0.3}
+      }
+  }
   return (
     <div className=' text-start md:text-center bg-[#f6feff] md:py-32 py-10'>
       <h1 className='md:text-5xl text-3xl text-[#1b2963] font-bold'>
@@ -39,15 +49,17 @@ const TeamPageTrusted = () => {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae molestie nibh.</p>
       <div className=' container'>
         <Cards />
-        <div className='grid lg:grid-cols-4 md:grid-cols-2 gap-y-6 shadow-sm gap-x-8 mt-20'>
+        <motion.div  initial={"hide"} whileInView={"show"} viewport={{once:false,amount:0.5}}  transition={{staggerChildren:0.2}}   className='grid lg:grid-cols-4 md:grid-cols-2 gap-y-6 shadow-sm gap-x-8 mt-20'>
           {
-        data.map((e) => <Link to={e.link} id={e.id} className='p-6 border bg-white rounded-t-2xl rounded-bl-2xl shadow-md hover:border-black duration-500 hover:-translate-y-4 '>
+            data.map((e) => <Link to={e.link} >
+          <motion.div to={e.link} variants={imageAnimation} id={e.id} className='p-6 border bg-white rounded-t-2xl rounded-bl-2xl shadow-md hover:border-black duration-500 hover:-translate-y-4 '>
             <div className='w-full' ><img className='rounded-t-2xl w-full rounded-bl-2xl' src={e.img} alt="" /></div>
             <div className='mt-6 mb-2'><h5 className='text-xl font-bold'>{e.name}</h5></div>
             <div><p className='opacity-60 font-normal'>{e.textdes }</p></div>
+        </motion.div>
         </Link>)
     } 
-    </div>
+    </motion.div>
 
       </div>
     </div>

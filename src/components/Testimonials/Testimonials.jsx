@@ -119,13 +119,13 @@ const Testimonials = () => {
       <div className='container lg:py-32 py-20 overflow-hidden'>
         <div className='flex mb-20 flex-col lg:flex-row lg:justify-between justify-start items-center '>
               <div>
-              <div className='flex items-center  space-x-2 mb-4 '>
+              <div data-aos='fade-right'  data-aos-easing="ease-in-out"  data-aos-duration="1000" data-aos-delay="50" data-aos-once="false"  className='flex items-center  space-x-2 mb-4 '>
                   <div className='w-10 h-[2px]  bg-[#1ba0ab] '> </div>
                   <div className='text-[#1ba0ab] leading-7'>Testimonials</div>
                   </div>
-                  <h1 className='md:text-5xl text-3xl font-bold'>See What Our <span className='text-[#7d90e0]'>Client Say</span></h1>
+                  <h1 data-aos='fade-right'  data-aos-easing="ease-in-out"  data-aos-duration="1000" data-aos-delay="50" data-aos-once="false"  className='md:text-5xl text-3xl font-bold'>See What Our <span className='text-[#7d90e0]'>Client Say</span></h1>
               </div>
-              <div className='grid grid-cols-2 gap-12 '>
+              <div data-aos='fade-left'  data-aos-easing="ease-in-out"  data-aos-duration="1000" data-aos-delay="50" data-aos-once="false"  className='grid grid-cols-2 gap-12 '>
                   <button onClick={()=>sliders.current.slickPrev()}  className='w-12 h-12 border rounded-full flex justify-center items-center  '> <img  src="https://assets.website-files.com/6103dc5e4e41bd925dc0997f/612f92af448f4fce7813d069_Left%20Arrow.svg" alt="" /></button>
                   <button onClick={()=>sliders.current.slickNext()}  className='w-12 h-12 border rounded-full flex justify-center items-center  '> <img  src="https://assets.website-files.com/6103dc5e4e41bd925dc0997f/612f92c80ce3cfbe2748484b_Right%20Arrow.svg" alt="" /></button>
               </div>

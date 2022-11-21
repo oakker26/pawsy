@@ -7,7 +7,7 @@ const ContactPageHero = () => {
   return (
     <div className="">
       <div className=" container md:container relative overflow-hidden">
-        <div className="flex md:flex-row flex-col justify-between items-center pt-0 lg:pt-16">
+        <div className="flex md:flex-row flex-col justify-between items-center pt-0 lg:pt-32">
           <h1 className="text-3xl lg:text-5xl font-semibold text-white my-10  ">
             Contact Us
           </h1>

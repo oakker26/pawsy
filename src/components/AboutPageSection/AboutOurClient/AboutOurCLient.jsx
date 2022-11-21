@@ -5,7 +5,7 @@ const AboutOurCLient = () => {
   return (
       <div className='container pt-28 lg:pt-[360px] pb-32  bg-[linear-gradient(180deg,#ffffff,#f3fdff)]'>
       <div className='flex lg:flex-row flex-col-reverse items-center justify-between'>
-        <div className='flex-col lg:w-[470px] w-full text-center lg:text-start mt-20 lg:mt-0 '>
+        <div  data-aos='fade-right'  data-aos-easing="ease-in-out"  data-aos-duration="1000" data-aos-delay="50" data-aos-once="false"  className='flex-col lg:w-[470px] w-full text-center lg:text-start mt-20 lg:mt-0 '>
           <h1 className='md:text-5xl text-3xl font-semibold'>About <span className='text-[#7d90e0]'>Our Clinic</span></h1>
           <p className=' mt-8 text-lg opacity-60 mb-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Morbi cursus auctor purus at vulputate. Nulla quis rutrum leo,
@@ -17,7 +17,7 @@ const AboutOurCLient = () => {
           <button className='primaryBtn mx-auto lg:mx-0 '>Contact Us</button>
           </Link>
         </div>
-        <div className='relative'>
+        <div  data-aos='fade-left'  data-aos-easing="ease-in-out"  data-aos-duration="1000" data-aos-delay="50" data-aos-once="false"  className='relative'>
           <div>
           <img src="https://assets.website-files.com/6103dc5e4e41bd925dc0997f/61326443507f24f71007ef4d_About%20Image.png" alt="" />
           </div>

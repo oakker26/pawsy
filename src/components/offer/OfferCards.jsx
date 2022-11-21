@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import { motion } from 'framer-motion'
 const OfferCards = () => {
   let data = [{
       id: 1,
@@ -30,13 +30,25 @@ const OfferCards = () => {
         title: "Surgical Service",
         para: "Expedita corrupti est non adipisci voluptatem est consequatur.",
         link:"services/surgicalservice"
-    }]
+      }]
+      
+    const imageAnimation={
+        hide:{x:-100,
+        opacity:0},
+        show:{
+            x:0,
+            opacity:1,
+            transition:{duration:0.3}
+        }
+    }
+   
+    
     return (
-        <div className='grid grid-cols-1 lg:grid-cols-4 gap-x-8  gap-y-8 lg:gap-y-0    '>
+        <motion.div  initial={"hide"} whileInView={"show"} viewport={{once:false}}  transition={{staggerChildren:0.2}} className='grid grid-cols-1 lg:grid-cols-4 gap-x-8  gap-y-8 lg:gap-y-0    '>
             {data.map((e) => {
                 return (
                     <Link to={e.link} className=''>
-                        <div className='p-7 border border-[#fff] hover:border duration-500 delay-75  hover:border-[#000] bg-white shadow-lg rounded-bl-3xl rounded-t-3xl'>
+                        <motion.div variants={imageAnimation} className='p-7 border border-[#fff] hover:border duration-500 delay-75  hover:border-[#000] bg-white shadow-lg rounded-bl-3xl rounded-t-3xl'>
                             <div className='w-16 h-16 flex justify-center items-center bg-[#1b296309] rounded-full'>
                             <img src={e.img} alt="" />
                             </div>
@@ -46,11 +58,11 @@ const OfferCards = () => {
                             <div className=' '>
                                 <p className='text-[#595f77] text-base leading-[26px]'>{e.para}</p>
                             </div>
-                        </div>
+                        </motion.div>
                     </Link>
                 )
             })}
-            </div>
+            </motion.div>
             
   )
   

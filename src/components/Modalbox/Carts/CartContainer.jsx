@@ -1,7 +1,6 @@
 import React from 'react'
 import CartItem from './CartItem'
-import { useSelector } from 'react-redux'
-import { store } from '../../../store/store'
+import { useDispatch,useSelector } from 'react-redux'
 import { motion } from 'framer-motion'
 const CartContainer = () => {
     const {cartItems, total, amount}= useSelector((store)=>store.cart)
@@ -35,12 +34,18 @@ const CartContainer = () => {
         </div>
       </div>
       <div className=' grid justify-center place-content-center grid-cols-1 '>
-      {cartItems.map((item)=><CartItem key={item.id} img={item.img} title={item.title} price={item.price} link={item.link} />)}
+      {cartItems.map((item)=><CartItem key={item.id} {...item} />)}
 
           
       </div>
-      <footer>
-        
+      <footer className='border-t container py-4'>
+        <div className=' flex justify-between mb-2'>
+        <p className='text-lg'>SubTotal</p>
+        <p className='text-2xl font-semibold'>$ {total.toFixed(2)} USD</p>
+        </div>
+        <div>
+          <button className='primaryBtn w-full'>Containue to CheckOut</button>
+        </div>
       </footer>
         
       </motion.div>

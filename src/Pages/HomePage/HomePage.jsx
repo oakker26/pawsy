@@ -14,17 +14,15 @@ const HomePage = () => {
       <motion.div
       initial={{
         opacity: 0,
-        translateY: -500,
-      translateX:-500}}
+        translateY: -500}}
       animate={{
         opacity: 1,
-        translateY: 0,
-        translateX:0
+        translateY: 0
         , transition: { duration: 0.4 }
       }}
+      className="overflow-x-hidden  mb-0 lg:mb-[463px]"
       exit={{ opacity: 0, translateY:500,translateX:500 ,transition:{duration:0.4}}}  >
           
-      <div className=' mb-0 lg:mb-[463px]'>
       <div className='bg-[linear-gradient(180deg,#1b2963,#152154)] '>
             <div className='container relative bg-[linear-gradient(180deg,#1b2963,#152154)] px-auto '>
       <div className=" absolute top-0  right-0 hidden lg:block  z-10  ">
@@ -50,7 +48,6 @@ const HomePage = () => {
             <Blog />
         </div>
           
-        </div>
     </motion.div>
   )
 }

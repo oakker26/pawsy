@@ -3,10 +3,8 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 const HeroSection = () => {
   return (
-      <div className='pt-[4.1rem] pb-[4.1rem] pt-[78.98px]  bg-[linear-gradient(180deg,#1b2963,#152154)]  grid grid-cols-1 lg:grid-cols-2 items-center justify-end relative  gap-4 md:gap-7'>
-          <motion.div initial={{
-              opacity: 0,
-          translateY:-10,transitionDuration:0.4}} animate={{opacity:1,translateY:0}} className='relative'>
+      <div className=' pb-[4.1rem] pt-[4.1rem] bg-[linear-gradient(180deg,#1b2963,#152154)]  grid grid-cols-1 lg:grid-cols-2 items-center justify-end relative  gap-4 md:gap-7'>
+          <div  data-aos='fade-right'  data-aos-easing="ease-in-out"  data-aos-duration="800" data-aos-delay="50" data-aos-once="false" className='relative'>
               <div className='flex items-center space-x-2'>
                   <div className='w-10 h-[2px] bg-[#1ba0ab] '> </div>
                   <div className='text-[#1ba0ab] leading-7'>Vet & Shop</div>
@@ -17,8 +15,8 @@ const HeroSection = () => {
               <Link to='/contact'>
               <button className='primaryBtn w-full md:w-64 font-semibold '>Make an Appointment</button>
               </Link>
-          </motion.div>
-          <div className='relative'>
+          </div>
+          <div className='relative '  data-aos='fade-left'  data-aos-easing="ease-in-out"  data-aos-duration="800" data-aos-delay="50" data-aos-once="false">
               <div className='ml-0 md:ml-16 lg:ml-0'>
               <img className='' src="https://assets.website-files.com/6103dc5e4e41bd925dc0997f/6135cdaae8df4e35809238ad_Hero%20Image.png" alt="" />
                   

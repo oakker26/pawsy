@@ -33,10 +33,19 @@ import Post from './NestedPages/BlogNestedPage/Post';
 import MemberNestedPge from './NestedPages/MemberNestedPage/MemberNestedPge';
 import { AnimatePresence } from 'framer-motion';
 import ShareLayOut from './ShareLayOut';
-
+import { calculateTotal } from './feature/cart/cartSlice';
+import { useSelector,useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+AOS.init()
 function App() {
-  const location=useLocation()
-
+  const location = useLocation()
+  const {cartItems}=useSelector((store)=>store.cart)
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(calculateTotal())
+  },cartItems)
   return (<>
         <ScrollToTop/>
 <AnimatePresence exitBeforeEnter >

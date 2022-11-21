@@ -9,7 +9,7 @@ const PetHostel = () => {
     
     <div className="">
     <div className='lg:mb-[480px]'>
-            <div className=' min-h-[360px] overflow-hidden z-10 bg-[linear-gradient(180deg,#1b2963,#152154)] '>
+            <div className=' min-h-[420px] overflow-hidden z-10 bg-[linear-gradient(180deg,#1b2963,#152154)] '>
                   
 
               </div>

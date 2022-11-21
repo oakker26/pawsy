@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import { motion } from 'framer-motion'
 const ProductCards = () => {
     let data = [{
         id: 1,
@@ -35,10 +35,20 @@ const ProductCards = () => {
         link:"/product/productfour"
             
         },]
+        const imageAnimation={
+            hide:{x:100,
+            opacity:0},
+            show:{
+                x:0,
+                opacity:1,
+                transition:{duration:0.3}
+            }
+        }
   return (
-    <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-x-8  mt-12 lg:mt-20 '>
-              {data.map((e) => <Link to={e.link} className='bg-white p-6 border shadow-[0px_4px_12px_rgba(0,0,0,0.08)] mb-4  rounded-t-2xl rounded-bl-2xl hover:border-black duration-500 hover:-translate-y-3 '>
-                  <div id={e.id}>
+    <motion.div  initial={"hide"} whileInView={"show"} viewport={{once:false}}  transition={{staggerChildren:0.2}} className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-x-8  mt-12 lg:mt-20 '>
+              {data.map((e) => <Link to={e.link} >
+                  <motion.div  className='bg-white p-6 border shadow-[0px_4px_12px_rgba(0,0,0,0.08)] mb-4  rounded-t-2xl rounded-bl-2xl hover:border-black duration-500 hover:-translate-y-3 ' variants={imageAnimation}>
+                      <div id={e.id}>
                       <div className='flex justify-center items-center py-6 mb-5 bg-slate-50 rounded-t-2xl rounded-bl-2xl '>
                           <img src={e.img} className="mx-auto w-[40%]" alt="" />  
                       </div>
@@ -49,9 +59,11 @@ const ProductCards = () => {
                           <p className='text-lg opacity-60 '>${e.price} USD</p>
                       </div>
 
-                  </div>
+                      </div>
+                </motion.div>
+                      
               </Link>)}
-          </div>
+          </motion.div>
   )
 }
 

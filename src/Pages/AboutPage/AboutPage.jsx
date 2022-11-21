@@ -23,8 +23,7 @@ const AboutPage = () => {
           }}
         exit={{ opacity: 0, translateY: 500, translateX: 500,
             clipPath: 'polygon(65% 0, 36% 0, 66% 99%, 32% 100%)' , transition: {duration:0.4
-}}}  className = "" >
-        <div  className='lg:mb-[480px]'>
+}}}  className = " overflow-x-hidden lg:mb-[480px]" >
         <div className=' bg-[linear-gradient(180deg,#1b2963,#152154)]  '>
                 <div className='container'>
             <AboutHeroSection/>
@@ -41,9 +40,6 @@ const AboutPage = () => {
             <Aboutig />
 
             </div>
-        </div>
-
-             
     </motion.div>
         
   )

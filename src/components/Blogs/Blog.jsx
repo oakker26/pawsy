@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import BlogCard from './BlogCard'
-
+import { motion } from 'framer-motion'
 const Blog = () => {
     let data = [{
         id: 1,
@@ -27,24 +27,39 @@ const Blog = () => {
             link:"post/healthtwo",
             title: "5 Easy Ways to Keep Your Dog's Teeth Clean"
         },]
+        const imageAnimation={
+            hide:{x:-100,
+            opacity:0},
+            show:{
+                x:0,
+                opacity:1,
+                transition:{duration:0.3}
+            }
+        }
+       
   return (
       <div className='container bg-[#f6feff] lg:py-32 py-20'>
           <div className='flex flex-col md:flex-row justify-between items-center '>
               <div>
-                  <div className='flex items-center space-x-3'>
+                  <div data-aos='fade-right'  data-aos-easing="ease-in-out"  data-aos-duration="500" data-aos-delay="50" data-aos-once="false"  className='flex items-center space-x-3'>
                       <div className='w-10 h-[2px] bg-[#1ba0ab]'></div>
                       <h5 className='text-[#1ba0ab]'>Blog</h5>
                   </div>
-                  <h1 className='text-[#1b2963]  text-5xl font-bold mt-4'>Our <span className='text-[#7d90e0]'> Recent Posts</span></h1>
+                  <h1 data-aos='fade-right'  data-aos-easing="ease-in-out"  data-aos-duration="500" data-aos-delay="50" data-aos-once="false"  className='text-[#1b2963]  text-5xl font-bold mt-4'>Our <span className='text-[#7d90e0]'> Recent Posts</span></h1>
               </div>
               <div>
-                  <Link to='blog' className='PrimaryOutlineBtn  hover:scale-110 duration-500 w-full lg:w-auto'>All Posts</Link>
+                  <Link data-aos='fade-left'  data-aos-easing="ease-in-out"  data-aos-duration="500" data-aos-delay="50" data-aos-once="false"  to='blog' className='PrimaryOutlineBtn  hover:scale-110 duration-500 w-full lg:w-auto'>All Posts</Link>
               </div>
         </div>
-          <div className='grid grid-cols-1 gap-y-6 lg:grid-cols-3 gap-x-7 mt-20'>
-          {data.map(e => <BlogCard link={e.link} id={e.id} img={e.img} header={e.header} date={e.date} title={e.title} />)}
+          <motion.div initial={"hide"} whileInView={"show"} viewport={{once:false}}  transition={{staggerChildren:0.3}} className='grid grid-cols-1 gap-y-6 lg:grid-cols-3 gap-x-7 mt-20'>
+          
+              {data.map(e =><motion.div  variants={imageAnimation}>
+                  <BlogCard link={e.link} id={e.id} img={e.img} header={e.header} date={e.date} title={e.title} />
+                  </motion.div> 
+          )}
+              
             
-          </div>
+          </motion.div>
     </div>
   )
 }
