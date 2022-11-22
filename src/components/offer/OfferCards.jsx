@@ -48,14 +48,14 @@ const OfferCards = () => {
             {data.map((e) => {
                 return (
                     <Link to={e.link} className=''>
-                        <motion.div variants={imageAnimation} className='p-7 border border-[#fff] hover:border duration-500 delay-75  hover:border-[#000] bg-white shadow-lg rounded-bl-3xl rounded-t-3xl'>
+                        <motion.div variants={imageAnimation} className='p-7 h-[264px] flex flex-col border border-[#fff] hover:border duration-500 delay-75  hover:border-[#000] bg-white shadow-lg rounded-bl-3xl rounded-t-3xl'>
                             <div className='w-16 h-16 flex justify-center items-center bg-[#1b296309] rounded-full'>
                             <img src={e.img} alt="" />
                             </div>
                             <div className='mt-6 mb-3 font-bold text-xl text-[#1b2963] '>
                                 <h5 >{e.title}</h5>
                             </div>
-                            <div className=' '>
+                            <div className=' mt-auto '>
                                 <p className='text-[#595f77] text-base leading-[26px]'>{e.para}</p>
                             </div>
                         </motion.div>

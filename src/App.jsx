@@ -1,10 +1,6 @@
 import './App.css'
-import AboutPage from './Pages/AboutPage/AboutPage';
-import HomePage from './Pages/HomePage/HomePage';
-import ProductPage from './Pages/ProductPage/ProductPage';
-import TeamPage from './Pages/TeamPage/TeamPage';
-import BlogPage from './Pages/BlogPage/BlogPage'
-import ContactPage from './Pages/ContactPage/ContactPage';
+import React, {lazy,Suspense} from 'react';
+
 import MitchellTorphy from './NestedPages/MemberNestedPage/MitchellTorphy/ MitchellTorphy';
 import AllisonWillis from './NestedPages/MemberNestedPage/AllisonWillis/AllisonWillis';
 import AnneJacobs from './NestedPages/MemberNestedPage/AnneJacobs/AnneJacobs';
@@ -25,7 +21,7 @@ import DentalCare from './Services/DentalCare/DentalCare'
 import SurgicalService from './Services/SurgicalService/SurgicalService'
 import PetHostel from './Services/PetHostel/PetHostel'
 import GroomingService from './Services/GroomingService/GroomingService';
-import {BrowserRouter,Routes,Route ,useLocation} from 'react-router-dom'
+import {Routes,Route ,useLocation} from 'react-router-dom'
 import ErrorPage from './Pages/ErrorPage/ErrorPage';
 import ScrollToTop from './ScrollToTop';
 import ProductNestedPage from './NestedPages/ProductNestedPage/ProductNestedPage';
@@ -38,7 +34,14 @@ import { useSelector,useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
+import { CircleLoader } from '../node_modules/react-spinners'
 AOS.init()
+const HomePage=lazy(()=> import("./Pages/HomePage/HomePage"))
+const AboutPage=lazy(()=> import("./Pages/AboutPage/AboutPage"))
+const TeamPage=lazy(()=> import("./Pages/TeamPage/TeamPage"))
+const ProductPage=lazy(()=> import("./Pages/ProductPage/ProductPage"))
+const ContactPage=lazy(()=> import("./Pages/ContactPage/ContactPage"))
+const BlogPage=lazy(()=> import("./Pages/BlogPage/BlogPage"))
 function App() {
   const location = useLocation()
   const {cartItems}=useSelector((store)=>store.cart)
@@ -48,7 +51,12 @@ function App() {
   },cartItems)
   return (<>
         <ScrollToTop/>
-<AnimatePresence exitBeforeEnter >
+    <AnimatePresence exitBeforeEnter >
+      <Suspense fallback={<div className='container bg-[linear-gradient(180deg,#1b2963,#152154)]   min-h-screen min-w-full flex justify-center items-center'>
+          <CircleLoader color="#7d90e0"  />
+          </div>
+      }>
+
       <Routes location={location} key={location.pathname}>
         <Route path='/' element={<ShareLayOut/>}>
         <Route index exact element={<HomePage />}/>
@@ -88,7 +96,9 @@ function App() {
       
         <Route path='*' element={<ErrorPage />}></Route>
         
-      </Routes>
+        </Routes>
+      </Suspense>
+        
       </AnimatePresence>
      
       {/* <BlogPage /> */}

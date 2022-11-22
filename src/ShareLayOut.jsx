@@ -17,9 +17,16 @@ const ShareLayOut = () => {
         , transition: { duration: 0.4 }
       }}
       exit={{ opacity: 0, translateY:500,translateX:500 ,transition:{duration:0.4}}} >
-          <Navbar />
-          <Footer/>
-      <Outlet/>
+      <div className="bg-[linear-gradient(360deg,#1b2963,#152154)]">
+      <Navbar />
+        
+        </div>
+      <div className="bg-[linear-gradient(360deg,#1b2963,#152154)]">
+      <div className="container  pl-0">
+      <Footer/>
+      </div>
+      </div>
+      <Outlet />
       </motion.div>
   )
 }

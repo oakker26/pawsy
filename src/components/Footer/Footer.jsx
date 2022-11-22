@@ -59,7 +59,7 @@ const Footer = () => {
                   
               </div>
               <div className='flex justify-center space-x-2 items-center'>
-                  <p className='text-center text-white opacity-60'>Powered by </p><span className=' text-white opacity-100 underline'>Sa Yr G</span>
+                  <p className='text-center text-white opacity-60'>Powered by </p><span className=' text-white opacity-100 underline'>Kwi Kwi</span>
               </div>
               <div>
                   <div className='flex justify-end items-center '>

@@ -7,8 +7,8 @@ const ProductPageHero = () => {
   return (
       <div className=' h-[460px] md:h-[360px] relative'>
           <div className='flex md:flex-row flex-col justify-between items-center mt-0 lg:pt-36'>
-              <h1 className='text-3xl lg:text-5xl font-semibold text-white my-10  '>Our <span className='text-[#7d90e0]'>Products</span></h1>
-              <div className='flex justify-center p-4 text-white bg-[#ffffff22] rounded-full items-center'>
+              <h1  data-aos='fade-right'  data-aos-easing="ease-in-out"  data-aos-duration="1000" data-aos-delay="50" data-aos-once="false"   className='text-3xl lg:text-5xl font-semibold text-white my-10  '>Our <span className='text-[#7d90e0]'>Products</span></h1>
+              <div  data-aos='fade-left'  data-aos-easing="ease-in-out"  data-aos-duration="1000" data-aos-delay="50" data-aos-once="false"   className='flex justify-center p-4 text-white bg-[#ffffff22] rounded-full items-center'>
                   <h1 >Home</h1>
                   <AiOutlineRight className='font-bold mx-1 opacity-50' />
                   <p className='opacity-50'>Products</p>

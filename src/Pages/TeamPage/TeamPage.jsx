@@ -16,7 +16,7 @@ const TeamPage = () => {
       , transition: { duration: 0.4 }
     }}
     exit={{ opacity: 0, translateY:500,translateX:500 ,transition:{duration:0.4}}} className="">
-    <div className='lg:mb-[480px]'>
+    <div className='lg:mb-[480px] overflow-x-hidden'>
     <div className=' bg-[linear-gradient(180deg,#1b2963,#152154)]  '>
           <div className='container'>
             <TeamPageHero />

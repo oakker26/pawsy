@@ -5,9 +5,9 @@ import ContactPageForm from './ContactPageForm'
 
 const ContactPageHero = () => {
   return (
-    <div className="">
+    <div  className="">
       <div className=" container md:container relative overflow-hidden">
-        <div className="flex md:flex-row flex-col justify-between items-center pt-0 lg:pt-32">
+        <div  data-aos='fade-up'  data-aos-easing="ease-in-out"  data-aos-duration="1000" data-aos-delay="50" data-aos-once="false"   className="flex md:flex-row flex-col justify-between items-center pt-0 lg:pt-32">
           <h1 className="text-3xl lg:text-5xl font-semibold text-white my-10  ">
             Contact Us
           </h1>
@@ -17,7 +17,7 @@ const ContactPageHero = () => {
             <p className="opacity-50">Contact</p>
           </div>
         </div>
-        <div className="relative overflow-hidden pt-14 pb-32 grid-cols-1  grid gap-10 lg:grid-cols-[2fr_minmax(auto,600px)]">
+        <div  data-aos='fade-up'  data-aos-easing="ease-in-out"  data-aos-duration="1000" data-aos-delay="50" data-aos-once="false"   className="relative overflow-hidden pt-14 pb-32 grid-cols-1  grid gap-10 lg:grid-cols-[2fr_minmax(auto,600px)]">
           <div className="mt-12">
             <div className="flex  flex-col items-start  justify-center">
               <div className="text-white">

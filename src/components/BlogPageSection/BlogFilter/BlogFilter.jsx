@@ -67,7 +67,7 @@ const BlogFilter = () => {
         </div>
   </div>
     <motion.div layout className='grid grid-cols-1 gap-y-6 lg:grid-cols-3 gap-x-7 mt-20'>
-              {filter.map((e) => <motion.div animate={{ translateX: 0, opacity: 1 }} initial={{ translateX: -200, opacity: 0 }} className='border shadow-lg hover:-translate-y-4 duration-500 rounded-t-2xl hover:border-black  bg-white rounded-bl-2xl' id={e.id}>
+              {filter.map((e) => <div className='cursor-pointer border shadow-lg hover:-translate-y-4 duration-500 rounded-t-2xl hover:border-black  bg-white rounded-bl-2xl' id={e.id}>
                   <Link to={e.link}>
                   <div className='lg:h-[245px] overflow-hidden'>
                 <img className='rounded-t-2xl w-full lg:h-full  ' src={e.img} alt="" />
@@ -77,7 +77,7 @@ const BlogFilter = () => {
                 <h4 className='font-semibold mt-2 mb-4 text-2xl'>{e.title}</h4>
                 <p className='font-[montserrat] text-sm'>{e.date}</p>
             </div></Link>
-        </motion.div>)}
+        </div>)}
     </motion.div>
 </div>
   )
