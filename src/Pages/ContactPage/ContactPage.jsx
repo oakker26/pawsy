@@ -16,7 +16,7 @@ const ContactPage = () => {
       translateX:0
       , transition: { duration: 0.4 }
     }}
-    exit={{ opacity: 0, translateY:500,translateX:500 ,transition:{duration:0.4}}} className="">
+    exit={{ opacity: 0, translateY:500,translateX:500 ,transition:{duration:0.4}}} className=" overflow-hidden">
     <div className='lg:mb-[480px] '>
     <div className=' bg-[linear-gradient(180deg,#1b2963,#152154)]  '>
           <ContactPageHero />   

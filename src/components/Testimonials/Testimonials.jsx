@@ -64,7 +64,7 @@ const Testimonials = () => {
       focusOnSelect: true,
       arrows: false,
       speed: 400,
-      lazyload:true,
+      lazyload: true,
       infinite: true,
       slidesToShow: 3,
       className:"center",

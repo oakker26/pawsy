@@ -14,7 +14,7 @@ export const cartItems = [{
     title: "Premium Dog Food 2",
     price: "12.00",
     link: "/product/producttwo",
-    amount:1
+    amount:0
     
     
     },
@@ -24,7 +24,7 @@ export const cartItems = [{
         title: "Premium Dog Food 3",
         price: "12.00",
         link: "/product/productthree",
-        amount:1
+        amount:0
     
         
     },
@@ -34,7 +34,7 @@ export const cartItems = [{
         title: "Premium Dog Food 4",
         price: "24.00",
         link: "/product/productfour",
-        amount:1
+        amount:0
     
         
     }]

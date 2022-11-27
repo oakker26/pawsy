@@ -1,7 +1,7 @@
 import React from 'react'
 import { decreaseItem, increaseItem, removeItem } from '../../../feature/cart/cartSlice'
 import { useDispatch } from 'react-redux'
-const CartItem = ({ id, img, title, price, link,amount }) => {
+const CartItem = ({ id, img, title, price, link , amount }) => {
   const dispatch = useDispatch();
   return (
       <div>

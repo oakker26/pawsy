@@ -1,21 +1,30 @@
 import React, { useState } from 'react'
 import ProductOneDes from './ProductOneDes'
-
-const ProductOneHero = () => {
-  const [click, setClick] = useState(false)
-  let handleClick = () => {
-    setClick(true)
+import { useDispatch } from 'react-redux'
+import '../Products.css'
+import { useRef } from 'react'
+import { increaseItem } from '../../../feature/cart/cartSlice'
+// import {productImg } from "https://assets.website-files.com/6107f3f9a7b00e6adf411dd2/613f20f438e04d7ea0a64249_Product%20Image%20Small.png"
+const ProductOneHero = ({ id, amount }) => {
+  const ref=useRef()
+  
+  const dispatch=useDispatch()
+  const clickHandler = () => {
+    ref.current.classList.add('send-to-cart')
+    setTimeout(() => {
+      ref.current.classList.remove('send-to-cart')      
+    },1000)
+    
   }
   return (
-     <div className=" relative mb-8 md:mb-20 md:container pl-4 md:pl-0  md:pr-0 ">
+     <div className="  mb-8 md:mb-20 md:container pl-4 md:pl-0  md:pr-0 ">
       <div className="flex-col  items-end  ">
-        <div className=" relative w-[100%] mb-[-237px] rounded-2xl">
-          <div className=" rounded-2xl relative md:container md:pr-0 ">
+        <div className="  w-[100%] mb-[-237px] rounded-2xl">
+          <div className=" rounded-2xl  md:container md:pr-0 ">
                       <div className="grid grid-rows-1 p-10  bg-white rounded-2xl lg:grid-cols-1  ">
                           <div className='grid grid-cols-12    mt-5 md:gap-x-10  '>
                               <div className='p-2 relative border col-span-12 lg:col-span-5 flex justify-center items-center rounded-2xl'>
-                              <img className='' src="https://assets.website-files.com/6107f3f9a7b00e6adf411dd2/613f20f438e04d7ea0a64249_Product%20Image%20Small.png" alt="" />
-                              <img  className={click? "absolute translate-x-[50rem] -translate-y-96 rotate-[460deg] duration-1000 before:opacity-100 after:opacity-0 " :"absolute"} src="https://assets.website-files.com/6107f3f9a7b00e6adf411dd2/613f20f438e04d7ea0a64249_Product%20Image%20Small.png" alt="" />
+                              <img ref={ref} className='cart-item ' src="https://assets.website-files.com/6107f3f9a7b00e6adf411dd2/613f20f438e04d7ea0a64249_Product%20Image%20Small.png" alt="" />
                                   <img  className='absolute bottom-5 right-5' src="https://assets.website-files.com/6103dc5e4e41bd925dc0997f/613e1918ad5deae27def8d68_arrows-diagonals%201.svg" alt="" />
                               </div>
                               <div className='col-span-12 lg:col-span-7 mt-12 lg:mt-0'>
@@ -27,7 +36,7 @@ const ProductOneHero = () => {
                                       <label htmlFor="number"></label>
                                       <input type="number" className=' bg-[#fafafa] w-full px-4 h-14 md:w-20 font-[monsarret] rounded-xl border' />
                                       </div>
-                                      <button className='primaryBtn' onClick={handleClick}>Add to Cart</button>
+                                      <button className='primaryBtn' onClick={clickHandler} >Add to Cart</button>
                                   </div>
                               </div>
                           </div>

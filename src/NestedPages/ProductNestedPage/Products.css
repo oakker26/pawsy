@@ -1,0 +1,52 @@
+  .cart-item {
+    position: absolute;
+   
+    
+  }
+  .cart-item::before {
+    display: block;
+  }
+
+
+  
+  .send-to-cart.cart-item {
+    display: block;
+    animation: xAxis 1s ease-in-out ;
+  }
+  
+  .send-to-cart.cart-item::before {
+    animation: yAxis 1s alternate forwards cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  
+  .shake {
+    animation: shakeCart 0.4s ease-in-out forwards;
+  }
+  
+  @keyframes xAxis {
+    100% {
+      transform: rotate(350deg)
+      scale(0)
+    }
+  }
+  
+  @keyframes yAxis {
+    100% {
+      transform: translateY(-104px);
+    }
+  }
+  
+  @keyframes shakeCart {
+    25% {
+      transform: translateX(6px);
+    }
+    50% {
+      transform: translateX(-4px);
+    }
+    75% {
+      transform: translateX(2px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
